@@ -26,6 +26,8 @@ collections:
           name: "publishDate",
           widget: "datetime",
           date_format: "YYYY-MM-DD",
+          time_format: "HH:mm",
+          default: "{{now}}",
           required: true,
         }
       - { label: "标签", name: "tags", widget: "list", required: true }
