@@ -2,7 +2,6 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 // import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
-import Note from "@/components/note/Note.astro";
 import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
@@ -15,14 +14,10 @@ const allPostsByDate = allPosts
 	.sort(collectionDateSort)
 	.slice(0, MAX_POSTS) as CollectionEntry<"post">[];
 
-// Notes
-const MAX_NOTES = 0;
-const allNotes = await getCollection("note");
-const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 ---
 
 <!-- 修改：主页 -->
-<PageLayout meta={{ title: "主页" }}>
+<PageLayout meta={{ title: "未来已到" }}>
 	<!-- 修改：注释 -->
 	<!-- <section>
 		<h1 class="title mb-6">Hello World!</h1>
@@ -49,20 +44,4 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 			<a class="underline-offset-4 sm:hover:underline" href="/posts/">更多...</a>
 		</h2>
 	</section>
-	{
-		latestNotes.length > 0 && (
-			<section class="mt-16">
-				<h2 class="title mb-6 text-xl text-accent">
-					<a href="/notes/">笔记</a>
-				</h2>
-				<ul class="space-y-4" role="list">
-					{latestNotes.map((note) => (
-						<li>
-							<Note note={note} as="h3" isPreview />
-						</li>
-					))}
-				</ul>
-			</section>
-		)
-	}
 </PageLayout>
