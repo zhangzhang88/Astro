@@ -36,7 +36,7 @@ export const menuLinks: { path: string; title: string }[] = [
 	},
 	{
 		path: "/posts/",
-		title: "新闻",
+		title: "付费文章",
 	},
 ];
 
