@@ -1,7 +1,7 @@
 backend:
   name: github
   branch: main # change this to your branch
-  repo: zhangtaoran/2010 # 1、change this to your repo
+  repo: zhangzhang88/Astro # 1、change this to your repo
   site_domain: xw.ztr8.uk # 2、change this to your domain
   base_url: https://xw.ztr8.uk # 3、change this to your prod URL
   auth_endpoint: oauth # the oauth route provided by the integration
